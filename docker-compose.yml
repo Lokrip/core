@@ -1,0 +1,18 @@
+version: "3"
+
+
+services:
+  db-world:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=lokrip
+      - POSTGRES_PASSWORD=lol1234lol1234
+      - POSTGRES_DB=coursesdb
+    volumes:
+      - db-data-940123:/var/lib/postgresql/data
+
+volumes:
+  db-data-940123:
