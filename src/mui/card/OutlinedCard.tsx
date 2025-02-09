@@ -1,18 +1,19 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Fragment, MouseEvent } from 'react';
 
 interface OutlinedCardProps {
   name: string, 
-  description: string
+  description: string,
+  onDeleted?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const NewCard = ({name, description}: OutlinedCardProps) => (
-  <React.Fragment>
+const NewCard = ({name, description, onDeleted}: OutlinedCardProps) => (
+  <Fragment>
     <CardContent>
       <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
         Word of the Day
@@ -26,9 +27,12 @@ const NewCard = ({name, description}: OutlinedCardProps) => (
       </Typography>
     </CardContent>
     <CardActions>
-      <Button size="small">Learn More</Button>
+      <Button 
+        onClick={onDeleted} 
+        size="small"
+      >Удалить</Button>
     </CardActions>
-  </React.Fragment>
+  </Fragment>
 );
 
 export default function OutlinedCard(props: OutlinedCardProps) {
