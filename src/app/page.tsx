@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { Button } from "@mui/material";
 import CoursesList from "@/features/courses-list/pub/courses-list";
+import { CreateCourseForm } from "@/features/courses-list/pub/create-course-form";
 
 export default async function Home() {
 
@@ -13,6 +14,7 @@ export default async function Home() {
   return (
     <div className={styles.page}>
       <Button variant="contained">Contained</Button>
+      <CreateCourseForm />
     </div>
   );
 }
