@@ -6,6 +6,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormEvent, FormEventHandler, useTransition } from "react";
 import { createCourseAction } from "../actions";
+import styles from "./create-course-form.module.scss"
 
 const createCourseFormSchema = z.object({
     name: z.string().min(2).max(45),
@@ -16,7 +17,11 @@ export function CreateCourseForm({revalidatePagePath}: {revalidatePagePath: stri
     //zodResolver — это функция из @hookform/resolver/zod, которая позволяет использовать валидацию схем Zod вместе с react-hook-form.
     const [isCreateTransition, startCreateTransition] = useTransition()
     
-    const {handleSubmit,} = useForm({
+    const {
+        handleSubmit,
+        register,
+        formState: { errors }
+    } = useForm({
         resolver: zodResolver(createCourseFormSchema),
         defaultValues: {
             name: "",
@@ -28,24 +33,26 @@ export function CreateCourseForm({revalidatePagePath}: {revalidatePagePath: stri
     return (
         <form onSubmit={handleSubmit((data) => {
             startCreateTransition(async () => {
-                createCourseAction(data, revalidatePagePath);
-            })
-        })}>
+                await createCourseAction(data, revalidatePagePath);
+            });
+        })} className={styles.form}>
             <div className="mt-5">
                 <FormControl>
                     <InputLabel htmlFor="my-input">Название</InputLabel>
-                    <Input id="my-input" aria-describedby="my-helper-text" />
-                    <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
+                    <Input id="name" {...register("name")} />
+                    {errors.name && <FormHelperText>{errors.name.message}</FormHelperText>}
                 </FormControl>
             </div>
             <div className="mt-5">
                 <FormControl>
                     <InputLabel htmlFor="my-input">Описание</InputLabel>
-                    <TextareaAutosize id="my-textarea" aria-describedby="my-helper-text" />
-                    <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
+                    <TextareaAutosize id="description" {...register("description")} minRows={3} />
+                    {errors.description && <FormHelperText>{errors.description.message}</FormHelperText>}
                 </FormControl>
             </div>
-            <Button type="submit" disabled={isCreateTransition} variant="contained" style={{width: "100%"}}>Добавить</Button>
+            <Button type="submit" disabled={isCreateTransition} variant="contained" style={{width: "100%"}}>
+                {isCreateTransition ? "Добавление..." : "Добавить"}
+            </Button>
         </form>
     )
 }

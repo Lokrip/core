@@ -13,8 +13,8 @@ export default async function Home() {
 
   return (
     <div className={styles.page}>
-      <Button variant="contained">Contained</Button>
-      <CreateCourseForm />
+      <CreateCourseForm revalidatePagePath="/" />
+      <CoursesList revalidatePagePath="/" />
     </div>
   );
 }

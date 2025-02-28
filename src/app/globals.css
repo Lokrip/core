@@ -1,0 +1,112 @@
+:root {
+    --white: #FFFFFF;
+    --yellow: #F6BD26;
+    --primary-100: #217aff;
+    --primary-90: #2066de;
+    --primary-80: #236eca;
+    --primary-70: #1b4695;
+    --primary-40: #0c275d;
+    --primary-20: #07152e;
+    --primary-100-white-new: #fff6f8;
+    --primary-90-new: #e5e8f1;
+    --primary-80-new: #b7c0cf;
+    --primary-70-new: #989eaa;
+    --primary-40-new: #525761;
+    --primary-20-new: #2d3136;
+    --secondary-100: #1a7fde;
+    --secondary-20: #071433;
+    --neutral-100: #fffafc;
+    --neutral-98-default: #f7f7f7;
+    --neutral-80-default: #cccccc;
+    --neutral-60-default: #9b9b9b;
+    --neutral-50-default: #848484;
+    --neutral-40-default: #646464;
+    --neutral-30-default: #4d4d4d;
+    --neutral-20-default: #323232;
+    --neutral-10-default: #1c1c1c;
+    --neutral-5-default: #0c0c0c;
+  
+    /* Primary Color */
+    --neutral-primary: #f0ecec;
+    --neutral-95-default: #f3f3f3;
+    --neutral-blue-98: #000000;
+    --neutral-90-default: #e7e7e7;
+    --neutral-90: #e5dae2;
+    --neutral-60-default-new: #686868;
+    --neutral-80-default-new: #404040;
+    /* End Primary Color */
+  
+    --error-100: #FF2134;
+    --neutral-98: #faf2f5;
+    --neutral-95: #f2e9ec;
+    --neutral-80: #ccc2c7;
+    --neutral-60: #999197;
+    --neutral-50: #80797c;
+    --neutral-40: #616366;
+    --neutral-30: #4d494b;
+    --neutral-20: #303133;
+    --neutral-10: #1a1819;
+    --neutral-5: #0d0c0c;
+    --error-100: #FF2134;
+  }
+  
+  *,
+  *::after,
+  *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  
+  li {list-style: none;}
+  
+  a,
+  img,
+  span,
+  input,
+  select,
+  button {display: block;}
+  
+  
+  a {
+      color: inherit;
+      text-decoration: none;
+  }
+  
+  input,
+  button,
+  select {
+      background: none;
+      border: none;
+      font: inherit;
+  }
+  
+  button {cursor: pointer;}
+  
+  input,
+  select {
+      width: 100%;
+      outline: none;
+  }
+  
+  address {font-style: normal;}
+  
+  select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+  }
+  
+  
+  html {
+      font-family: 'Kanit', sans-serif;
+      font-size: 18px;
+  }
+  
+  
+  body {
+      background: var(--primary-100-white-new);
+      scroll-behavior: smooth;
+      color: var(--neutral-primary);
+  }
