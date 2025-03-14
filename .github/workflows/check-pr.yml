@@ -1,0 +1,17 @@
+name: Pull request check
+
+on: 
+    pull_request:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 20.x.x
+                  cache: npm
+            - run: npm run install
+            - run: npm run lint
+            - run: npm run lint:types
