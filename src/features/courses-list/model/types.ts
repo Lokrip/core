@@ -1,15 +1,15 @@
-interface CourseListElement {
+export interface CourseListElement {
     id: string;
     name: string;
     description: string;
 }
 
-interface CreateCourseListElementCommand {
+export interface CreateCourseListElementCommand {
     name: string;
     description: string;
 }
 
 
-interface DeleteCourseListElementCommand {
+export interface DeleteCourseListElementCommand {
     id: string
 }

@@ -1,6 +1,5 @@
 import {FC} from 'react';
 
-import styles from './courses-list.module.scss';
 import { coursesRepository } from '../courses.repository';
 import { CourseItem } from '../ui/course-item';
 import { revalidatePath } from 'next/cache';
