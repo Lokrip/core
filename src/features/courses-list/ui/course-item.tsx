@@ -2,6 +2,7 @@
 
 import OutlinedCard from "@/mui/card/OutlinedCard"
 import { useTransition } from "react"
+import { CourseListElement } from "../model/types"
 
 export function CourseItem({
     course,
