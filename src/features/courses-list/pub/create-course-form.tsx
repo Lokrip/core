@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, FormControl, FormHelperText, Input, InputLabel, TextareaAutosize } from "@mui/material";
+import { Button, FormControl, FormHelperText, Input, InputLabel, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -43,14 +43,18 @@ export function CreateCourseForm({revalidatePagePath}: {revalidatePagePath: stri
                     {errors.name && <FormHelperText>{errors.name.message}</FormHelperText>}
                 </FormControl>
             </div>
-            <div className="mt-5">
-                <FormControl>
-                    <InputLabel htmlFor="my-input">Описание</InputLabel>
-                    <TextareaAutosize id="description" {...register("description")} minRows={3} />
-                    {errors.description && <FormHelperText>{errors.description.message}</FormHelperText>}
-                </FormControl>
+            <div className="mt-5 mb-5">
+                <TextField
+                    id="outlined-multiline-flexible"
+                    label="Описание"
+                    multiline
+                    maxRows={4}
+                    minRows={4}
+                    {...register("description", { required: "Это поле обязательно" })}
+                />
+                {errors.description && <FormHelperText>{errors.description.message}</FormHelperText>}
             </div>
-            <Button type="submit" disabled={isCreateTransition} variant="contained" style={{width: "100%"}}>
+            <Button className="w-full" type="submit" disabled={isCreateTransition} variant="contained">
                 {isCreateTransition ? "Добавление..." : "Добавить"}
             </Button>
         </form>

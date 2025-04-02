@@ -1,6 +1,6 @@
 "use client"
 
-import OutlinedCard from "@/mui/card/OutlinedCard"
+import OutlinedCard from "@/shared/ui/OutlinedCard"
 import { useTransition } from "react"
 import { CourseListElement } from "../model/types"
 
