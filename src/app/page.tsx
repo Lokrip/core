@@ -10,7 +10,7 @@ export default async function Home() {
   // console.log(courses)
 
   return (
-    <div className={styles.page}>
+    <div className="max-w-7xl mx-auto mt-8">
       <CreateCourseForm revalidatePagePath="/" />
       <CoursesList revalidatePagePath="/" />
     </div>

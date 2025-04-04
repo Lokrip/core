@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
     --white: #FFFFFF;
     --yellow: #F6BD26;
@@ -48,65 +50,9 @@
     --neutral-10: #1a1819;
     --neutral-5: #0d0c0c;
     --error-100: #FF2134;
-  }
-  
-  *,
-  *::after,
-  *::before {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
-  
-  
-  li {list-style: none;}
-  
-  a,
-  img,
-  span,
-  input,
-  select,
-  button {display: block;}
-  
-  
-  a {
-      color: inherit;
-      text-decoration: none;
-  }
-  
-  input,
-  button,
-  select {
-      background: none;
-      border: none;
-      font: inherit;
-  }
-  
-  button {cursor: pointer;}
-  
-  input,
-  select {
-      width: 100%;
-      outline: none;
-  }
-  
-  address {font-style: normal;}
-  
-  select {
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-  }
-  
-  
-  html {
-      font-family: 'Kanit', sans-serif;
-      font-size: 18px;
-  }
-  
-  
-  body {
-      background: var(--primary-100-white-new);
-      scroll-behavior: smooth;
-      color: var(--neutral-primary);
-  }
+}
+
+body {
+  background: var(--primary-90-new);
+  scroll-behavior: smooth;
+}
