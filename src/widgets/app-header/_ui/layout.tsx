@@ -13,7 +13,7 @@ export function Layout({
 }) {
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:">
-            <div className="max-w-7xl mx-auto flex h-14 items-center">
+            <div className="container flex h-14 items-center">
                 <div className="md:hidden mr-2">
                     {logo}
                     {nav}
