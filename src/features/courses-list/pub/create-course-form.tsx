@@ -35,7 +35,7 @@ export function CreateCourseForm({revalidatePagePath}: {revalidatePagePath: stri
             startCreateTransition(async () => {
                 await createCourseAction(data, revalidatePagePath);
             });
-        })} className={styles.form}>
+        })} className="m-10 p-10 bg-blend-darken">
             <div className="mt-5">
                 <FormControl>
                     <InputLabel htmlFor="my-input">Название</InputLabel>

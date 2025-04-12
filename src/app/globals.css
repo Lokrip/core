@@ -53,7 +53,7 @@
 }
 
 body {
-  background: var(--primary-90-new);
+  /* background: rgb(31, 39, 46); */
   scroll-behavior: smooth;
 }
 
